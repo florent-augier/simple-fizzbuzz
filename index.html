@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fizzbuzz</title>
+    <script type="text/javascript" src="./script.js"></script>
+    <style>
+      * {
+        font-weight: 900;
+      }
+      #content {
+        display: flex;
+        flex-direction: column;
+      }
+      #title {
+        margin-bottom: 100px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      .numbers {
+        display: grid;
+        row-gap: 40px;
+        column-gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin: auto;
+      }
+      .fizz {
+        background-color: deepskyblue;
+      }
+      .buzz {
+        background-color: crimson;
+      }
+      .fizzbuzz {
+        background-color: mediumaquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h1 id="title">Fizzbuzz</h1>
+      <div class="numbers"></div>
+    </div>
+
+    <script>
+      for (const el of fizzBuzzArr) {
+        const box = document.createElement("div");
+        if (typeof el === "string")
+          box.className = "box" + ` ${el.toLowerCase()}`;
+        if (typeof el === "number") box.className = "box";
+        box.innerText = el;
+        document.querySelector(".numbers").appendChild(box);
+
+        console.log(el);
+      }
+      //     fizzBuzzArr.forEach((el) =>
+      //     box.innerText = el;
+      //       document.querySelector(".numbers").appendChild(box)
+      //   );
+    </script>
+  </body>
+</html>
